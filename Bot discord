@@ -1,0 +1,93 @@
+import discord
+import os
+import random
+from discord.ext import commands
+import time
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='$', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {bot.user}')
+
+@bot.command()
+async def hola(ctx):
+    await ctx.send(f'Hola, soy un bot {bot.user}!')
+
+@bot.command()
+async def heh(ctx, count_heh = 5):
+    await ctx.send("he" * count_heh)
+
+image = (random.choice(os.listdir('images')))
+print(image)
+
+@bot.command()
+async def moneda(ctx):
+    giro = random.randint(1, 2)
+    if giro == 1:
+        await ctx.send(f"El resultado del giro fue: CARA")
+    else:
+        await ctx.send(f"El resultado del giro fue: SELLO")
+
+@bot.command()
+async def mem(ctx):
+    with open(f"images/1.jpg", "rb") as f:
+        # Vamos a almacenar el archivo de la biblioteca discord convertido en esta variable!
+        picture = discord.File(f)
+
+@bot.command()
+async def mem1(ctx):
+    imagenes = os.listdir('images')
+# ¡Y así es como se puede sustituir el nombre del fichero desde una variable!
+    with open(f'images/{random.choice(imagenes)}', 'rb') as f:
+            picture = discord.File(f)
+    await ctx.send(file=picture)
+
+@bot.command()
+async def contaminacion(ctx):
+    await ctx.send(f"""Hola, soy el bot Candy's!""")# esta linea saluda
+    time.sleep(1)
+    await ctx.send(f'Te voy hablar un poco sobre la contaminacion')
+    time.sleep(1)
+    await ctx.send(f'La contaminación es un gran problema a nivel mundial, muchos paises sufren a diario')
+    time.sleep(1)
+    # Enviar una pregunta al usuario
+    await ctx.send("Quieres consejos sobre cómo combatir la contaminación? Responde con 'sí' o 'no'.")
+    time.sleep(1)
+# Esperar la respuesta del usuario
+    def check(message):
+        return message.author == ctx.author and message.channel == ctx.channel and message.content in ['sí', 'si', 'no']
+    response = await bot.wait_for('message', check=check)
+    if response:
+        if response.content in ['sí', 'si']:
+            time.sleep(1)
+            await ctx.send("1. No arrojar basura en los rios")
+            time.sleep(1)
+            await ctx.send("2. Dejar de quemar basuras")   
+        else:
+            time.sleep(1)
+            await ctx.send("Está bien, si alguna vez necesitas consejos, no dudes en preguntar.")
+    else:
+        time.sleep(1)
+        await ctx.send("Lo siento, no pude entender tu respuesta. Inténtalo de nuevo.")
+        time.sleep(1)
+    await ctx.send("Quieres saber la definicion de contaminacion, responde si o no")
+    time.sleep(1)
+    response1 = await bot.wait_for('message', check=check)
+    time.sleep(1)
+    if response1:
+        time.sleep(1)
+        if response1.content in ['sí', 'si']:
+            time.sleep(1)
+            await ctx.send("Arrojar basura") 
+        else:
+            time.sleep(1)
+            await ctx.send("Está bien, si alguna vez necesitas consejos, no dudes en preguntar.")
+    else:
+        time.sleep(1)
+        await ctx.send("Lo siento, no pude entender tu respuesta. Inténtalo de nuevo.")
+
+bot.run("Aquí va el TOKEN")
