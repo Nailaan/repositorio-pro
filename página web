@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contaminación</title>
+</head>
+<head>
+    <title>Información útil</title>
+    <link rel="stylesheet" href="pagina.css">
+</head>
+<body>
+    <h1>Nuestra basura afecta al mundo</h1>
+    <h2>La contaminación es un problema</h2>
+    <p> La basura en el mundo es un problema, ya que muchos animales est'an muriendo por su culpa,
+        quedandose atrapados sin poder escapar u alimentarse. Otros de los problemas que genera la contaminaci'on es que produce gases que afectan al planeta negativamente.
+    </p>
+    <h2> C'omo prevenir la contaminaci'on</h2>
+             <ul>
+                   <li>Reducir, Reutilizar y Reciclar la basura que tiramos.</li>
+                   <li>Uso de Energías Renovables</li>
+                   <li>Transporte Sostenible como bicicletas o el transporte p'ublico</li>
+             </ul>
+            
+     <img src="https://www.lineaverdehuelva.com/lv/consejos-ambientales/conciencia-ambientual/img/Las-tres-R.jpg" alt="Image 1">
+</body>
+</html>
+
+<iframe src="https://www.meteoblue.com/en/weather/widget/daily?geoloc=detect&days=7&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&precipunit=MILLIMETER&coloured=coloured&pictoicon=1&maxtemperature=1&mintemperature=1&windspeed=1&windgust=0&winddirection=1&uv=0&humidity=0&precipitation=1&precipitationprobability=1&spot=1&pressure=0&layout=light"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 378px; height: 420px"></iframe><div><!-- DO NOT REMOVE THIS LINK --><a href="https://www.meteoblue.com/en/weather/week/index?utm_source=daily_widget&utm_medium=linkus&utm_content=daily&utm_campaign=Weather%2BWidget" target="_blank" rel="noopener">meteoblue</a></div>
